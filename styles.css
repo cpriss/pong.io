@@ -1,16 +1,76 @@
-/* style.css */
 body {
   margin: 0;
+  padding: 0;
+background-image: url('winter.jpg');  /* Overridden from rgb(233, 45, 45) */
+background-size: cover;
+  /* Scales the image to cover the entire background */
+  background-repeat: no-repeat;
+  /* Prevents the image from repeating */
+  background-position: center;
+  /* Centers the image within the background */
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: #000;
-  color: #fff;
-  font-family: Arial, sans-serif;
+  overflow: hidden;
 }
 
-#gameCanvas {
-  border: 2px solid #fff;
-  background-color: #222;
+#game-area {
+  position: relative;
+  background-color: #452c63;
+  width: 100%;
+  max-width: 800px;
+  /* Ensure it resizes properly on larger screens */
+  height: 80vh;
+  /* Adjust height for smaller screens */
+  border: 22px solid black;
+  margin: 0 auto;
+}
+
+#player,
+#ai-player {
+  position: absolute;
+  width: 20px;
+  height: 100px;
+}
+
+#player {
+  background-color: black;
+  /* Override */
+  left: 10px;
+  top: 200px;
+}
+
+#ai-player {
+  background-color: black;
+  /* Set from separate CSS file */
+  right: 10px;
+  top: 200px;
+}
+
+#ball {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: goldenrod;
+  border: 5px, black;
+  border-radius: 50%;
+  top: 240px;
+  left: 390px;
+}
+
+#score {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 24px;
+  color: white;
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+}
+
+#player-score,
+#ai-score {
+  margin: 0 10px;
 }
