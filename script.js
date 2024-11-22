@@ -8,8 +8,7 @@ const aiScoreElem = document.getElementById("ai-score");
 
 let playerY = 200;
 let aiY = 200;
-let basePlayerSpeed = 10;
-let playerSpeed = basePlayerSpeed;
+let playerSpeed = 10;
 let aiSpeed = 3;
 
 let playerScore = 0;
@@ -17,8 +16,8 @@ let aiScore = 0;
 
 let ballX = 390;
 let ballY = 240;
-let ballSpeedX = 3;
-let ballSpeedY = 3;
+let ballSpeedX = 5;
+let ballSpeedY = 5;
 
 const gameHeight = gameArea.offsetHeight;
 const gameWidth = gameArea.offsetWidth;
@@ -29,16 +28,8 @@ document.addEventListener("keydown", (event) => {
     playerY -= playerSpeed;
   } else if (event.key === "ArrowDown" && playerY < gameHeight - player.offsetHeight) {
     playerY += playerSpeed;
-  } else if (event.key === "Shift") {
-    playerSpeed = basePlayerSpeed * 5; // Double the speed when Shift is held
   }
   updatePlayerPosition();
-});
-
-document.addEventListener("keyup", (event) => {
-  if (event.key === "Shift") {
-    playerSpeed = basePlayerSpeed; // Reset to base speed when Shift is released
-  }
 });
 
 function updatePlayerPosition() {
